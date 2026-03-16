@@ -300,13 +300,30 @@ function setAlign(a) {
   drawPost();
 }
 
-function updateCanvasSize() {
-  const maxW = Math.min(window.innerWidth - 310, 560);
-  const maxH = Math.min(window.innerHeight - 100, 590);
-  scaleF = Math.min(maxW / canvasW, maxH / canvasH, 1);
-  canvas.width  = Math.round(canvasW * scaleF);
-  canvas.height = Math.round(canvasH * scaleF);
-  document.getElementById('canvasInfo').textContent = canvasW + ' × ' + canvasH + ' px';
+function updateCanvasSize(){
+
+  let maxW
+  let maxH
+
+  if (window.innerWidth < 768){
+
+    maxW = window.innerWidth - 20
+    maxH = window.innerHeight * 0.6
+
+  } else {
+
+    maxW = Math.min(window.innerWidth - 310, 560)
+    maxH = Math.min(window.innerHeight - 100, 590)
+
+  }
+
+  scaleF = Math.min(maxW / canvasW, maxH / canvasH, 1)
+
+  canvas.width  = Math.round(canvasW * scaleF)
+  canvas.height = Math.round(canvasH * scaleF)
+
+  document.getElementById('canvasInfo').textContent =
+    canvasW + ' × ' + canvasH + ' px'
 }
 function pickSize(el, w, h) {
   canvasW = w; canvasH = h;
@@ -640,13 +657,21 @@ function downloadPost() {
 // ─── START ──────────────────────────────────
 init();
 
+
 function previewPost(){
-drawPost()
-const imgData = canvas.toDataURL("image/png")
-document.getElementById("previewImage").src = imgData
-document.getElementById("previewModal").style.display="flex"
+
+  drawPost()
+
+  const imgData = canvas.toDataURL("image/png")
+
+  document.getElementById("previewImage").src = imgData
+
+  document.getElementById("previewModal").style.display = "flex"
+
 }
 
 function closePreview(){
-document.getElementById("previewModal").style.display="none"
+
+  document.getElementById("previewModal").style.display = "none"
+
 }

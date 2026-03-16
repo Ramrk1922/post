@@ -15,7 +15,8 @@
     <div class="logo">📰 Post Maker</div>
     <div class="topbar-right">
       <span id="canvasInfo">1080 × 1080 px</span>
-      <button class="btn btn-primary" onclick="downloadPost()">⬇ Download PNG</button>
+      <button class="btn" onclick="previewPost()">👁 Preview</button>
+<button class="btn btn-primary" onclick="downloadPost()">⬇ Download PNG</button>
     </div>
   </header>
 
@@ -309,13 +310,13 @@
   <script src="app.js"></script>
 
 <div id="previewModal" class="preview-modal">
-<div class="preview-box">
-<img id="previewImage">
-<div class="preview-buttons">
-<button class="btn" onclick="closePreview()">Close</button>
-<button class="btn btn-primary" onclick="downloadPost()">Download</button>
-</div>
-</div>
+  <div class="preview-box">
+    <img id="previewImage">
+    <div class="preview-buttons">
+      <button class="btn" onclick="closePreview()">Close</button>
+      <button class="btn btn-primary" onclick="downloadPost()">Download</button>
+    </div>
+  </div>
 </div>
 
 </body>
