@@ -605,7 +605,7 @@ function downloadPost() {
   }
   if (showShadow) { ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 6; } else ctx.shadowBlur = 0;
   if (showBar) { ctx.fillStyle = ac; ctx.fillRect(0, mH-6, rw, 6); ctx.fillRect(0, 0, rw, 5); }
-  ctx.fillStyle = ac; ctx.fillRect(28 + hX, mH*0.32 + hY, 5, mH*0.42);
+  ctx.fillStyle = ac; 
 
   const mxW = rw * twp - 60;
   ctx.fillStyle = hc; ctx.globalAlpha = op;
